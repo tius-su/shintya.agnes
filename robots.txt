@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shintya-setiawan.github.io/sitemap.xml
