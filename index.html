@@ -188,6 +188,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      padding-top: 68px;
     }
 
     /* ─── ANIMATED BACKGROUND ──────────────────────────────── */
@@ -212,14 +213,14 @@
     /* ─── LAYOUT ────────────────────────────────────────────── */
     .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-    /* ─── NAVBAR ────────────────────────────────────────────── */
+    /* ─── NAVBAR (FIXED TOP) ─────────────────────────────────── */
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(20px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
-      transition: background 0.3s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: background 0.3s, box-shadow 0.3s;
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
