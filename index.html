@@ -267,8 +267,15 @@
     .mobile-menu a:hover { color: var(--navy); }
 
     /* ─── HERO ───────────────────────────────────────────────── */
+    .hero-wrapper {
+      min-height: calc(100vh - 76px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 0 20px;
+    }
     .hero {
-      padding: 80px 0 60px;
+      padding: 40px 0 20px;
       display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
     }
     .hero-badge {
@@ -373,14 +380,14 @@
     }
 
     /* ─── CARD HOVER & SHADOW ACCENT EFFECTS ───────────────────── */
-    .about-card, .tl-card, .edu-card, .skill-group, .contact-item {
+    .about-card, .tl-card, .edu-card, .skill-group, .contact-item, .wid-card, .achieve-card {
       position: relative;
       overflow: hidden;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   border-color 0.3s ease;
     }
-    .about-card::before, .tl-card::before, .edu-card::before, .skill-group::before, .contact-item::before {
+    .about-card::before, .tl-card::before, .edu-card::before, .skill-group::before, .contact-item::before, .wid-card::before, .achieve-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
@@ -391,11 +398,11 @@
       transform-origin: left;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
     }
-    .about-card:hover::before, .tl-card:hover::before, .edu-card:hover::before, .skill-group:hover::before, .contact-item:hover::before {
+    .about-card:hover::before, .tl-card:hover::before, .edu-card:hover::before, .skill-group:hover::before, .contact-item:hover::before, .wid-card:hover::before, .achieve-card:hover::before {
       opacity: 1;
       transform: scaleX(1);
     }
-    .about-card:hover {
+    .about-card:hover, .wid-card:hover, .achieve-card:hover {
       transform: translateY(-5px);
       border-color: rgba(37,99,235,0.3);
       box-shadow: 0 16px 40px rgba(37,99,235,0.12);
@@ -420,6 +427,32 @@
       border-color: rgba(37,99,235,0.35);
       box-shadow: 0 12px 32px rgba(37,99,235,0.14);
     }
+
+    /* ─── WHAT I DO ─────────────────────────────────────────── */
+    .wid-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .wid-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 26px 20px; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .wid-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      display: grid; place-items: center; font-size: 1.15rem;
+      background: rgba(37,99,235,0.08); color: var(--blue);
+    }
+    .wid-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy); }
+    .wid-card p { font-size: 0.85rem; color: #64748b; line-height: 1.6; }
+
+    /* ─── ACHIEVEMENTS ───────────────────────────────────────── */
+    .achieve-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .achieve-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 26px 20px; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+    }
+    .achieve-icon { font-size: 2.2rem; }
+    .achieve-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy); }
+    .achieve-card p { font-size: 0.82rem; color: #64748b; line-height: 1.55; }
 
     /* ─── TIMELINE (EXPERIENCE) ──────────────────────────────── */
     .timeline { position: relative; padding-left: 28px; }
@@ -656,6 +689,9 @@
     #back-to-top:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,99,235,0.45); }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 992px) {
+      .wid-grid, .achieve-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    }
     @media (max-width: 768px) {
       html, body { overflow-x: hidden !important; width: 100vw; max-width: 100%; position: relative; }
       .container { padding: 0 16px; width: 100%; box-sizing: border-box; overflow: hidden; }
@@ -663,7 +699,8 @@
       .nav-logo { font-size: 0.88rem; max-width: calc(100% - 48px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .nav-links { display: none; }
       .hamburger { display: block; }
-      .hero { grid-template-columns: 1fr; text-align: center; padding: 36px 0 32px; gap: 28px; }
+      .hero-wrapper { min-height: auto; padding: 20px 0 10px; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 20px 0; gap: 24px; }
       .hero > div:first-child { order: 2; }
       .hero-photo-wrapper { order: 1; display: flex; justify-content: center; }
       .hero-photo-ring { width: 150px; height: 150px; }
@@ -677,13 +714,16 @@
       .stat-num { font-size: 1.8rem; }
       .edu-grid { grid-template-columns: 1fr; gap: 16px; }
       .edu-card { padding: 20px 16px; max-width: 100%; box-sizing: border-box; }
-      .about-card, .skill-group { padding: 20px 16px; max-width: 100%; box-sizing: border-box; }
+      .about-card, .skill-group, .wid-card, .achieve-card { padding: 20px 16px; max-width: 100%; box-sizing: border-box; }
       .cumlaude-badge { font-size: 0.76rem; padding: 4px 10px; max-width: 100%; box-sizing: border-box; word-break: break-word; }
       .tl-card { padding: 16px; max-width: 100%; box-sizing: border-box; }
       .thesis-card { grid-column: auto; }
       .skills-grid { grid-template-columns: 1fr; gap: 16px; }
       .contact-wrapper { grid-template-columns: 1fr; gap: 24px; }
       .hero h1 { font-size: 1.8rem; word-break: break-word; }
+    }
+    @media (max-width: 576px) {
+      .wid-grid, .achieve-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -702,7 +742,9 @@
       <a href="#" class="nav-logo">Shintya Agnes Setiawan, S.Psi</a>
       <ul class="nav-links">
         <li><a href="#about">Tentang</a></li>
+        <li><a href="#what-i-do">What I Do</a></li>
         <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#achievements">Pencapaian</a></li>
         <li><a href="#education">Pendidikan</a></li>
         <li><a href="#skills">Keahlian</a></li>
         <li><a href="#contact">Kontak</a></li>
@@ -713,53 +755,61 @@
     </div>
     <div id="mobile-menu" class="mobile-menu">
       <a href="#about">Tentang</a>
+      <a href="#what-i-do">What I Do</a>
       <a href="#experience">Pengalaman</a>
+      <a href="#achievements">Pencapaian</a>
       <a href="#education">Pendidikan</a>
       <a href="#skills">Keahlian</a>
       <a href="#contact">Kontak</a>
     </div>
   </nav>
 
-  <!-- ─── HERO ─────────────────────────────────────────── -->
-  <div class="container">
-    <div class="hero">
-      <div>
-        <div class="hero-badge">
-          <i class="fa-solid fa-circle-check"></i> Recruitment Specialist
-        </div>
-        <h1>Shintya Agnes<br>Setiawan, <span style="font-style:italic;background:linear-gradient(135deg,var(--blue),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">S.Psi</span></h1>
-        <p class="hero-subtitle">
-          Recruitment Specialist di <strong>PT Sentral Layanan Prima</strong> · Psychology Graduate <strong>BINUS University</strong> · IPK&nbsp;<strong>3.81</strong> · <span style="color:var(--gold)">✦ Magna Cum Laude</span>
-        </p>
-        <p class="hero-meta">
-          <i class="fa-solid fa-location-dot" style="color:var(--blue-lt)"></i>
-          Jakarta Raya, Indonesia
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Hubungi Saya</a>
-          <a href="CV Shintya Agnes S - Update 2026.pdf" download class="btn-gold"><i class="fa-solid fa-download"></i> Unduh CV</a>
-          <a href="#education" class="btn-ghost"><i class="fa-solid fa-award"></i> Lihat Sertifikat</a>
-        </div>
-      </div>
-      <div class="hero-photo-wrapper">
-        <div class="hero-photo-relative">
-          <div class="hero-photo-ring">
-            <img src="tia.jpg" alt="Shintya Agnes Setiawan – Foto Profil">
+  <!-- ─── HERO (100vh FULLSCREEN) ─────────────────────── -->
+  <div class="hero-wrapper">
+    <div class="container">
+      <div class="hero">
+        <div>
+          <div class="hero-badge">
+            <i class="fa-solid fa-circle-check"></i> Recruitment Specialist
           </div>
-          <div class="photo-status">
-            <div class="status-dot"></div>
-            Aktif Bekerja
+          <h1>Shintya Agnes<br>Setiawan, <span style="font-style:italic;background:linear-gradient(135deg,var(--blue),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">S.Psi</span></h1>
+          <p class="hero-tagline" style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-top: 14px; letter-spacing: -0.01em;">
+            Connecting talent with the right opportunities.
+          </p>
+          <p class="hero-subtitle" style="font-size: 0.95rem; color: var(--gray); margin-top: 8px; line-height: 1.65;">
+            <strong>PT Sentral Layanan Prima</strong> &nbsp;·&nbsp; <strong>BINUS University</strong><br>
+            IPK <strong>3.81 / 4.00</strong> &nbsp;·&nbsp; <span style="color:var(--gold); font-weight: 700;">✦ Magna Cum Laude</span>
+          </p>
+          <p class="hero-meta">
+            <i class="fa-solid fa-location-dot" style="color:var(--blue-lt)"></i>
+            Jakarta Raya, Indonesia
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Hubungi Saya</a>
+            <a href="CV Shintya Agnes S - Update 2026.pdf" download class="btn-gold"><i class="fa-solid fa-download"></i> Unduh CV</a>
+            <a href="#education" class="btn-ghost"><i class="fa-solid fa-award"></i> Lihat Sertifikat</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrapper">
+          <div class="hero-photo-relative">
+            <div class="hero-photo-ring">
+              <img src="tia.jpg" alt="Shintya Agnes Setiawan – Foto Profil">
+            </div>
+            <div class="photo-status">
+              <div class="status-dot"></div>
+              Aktif Bekerja
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Scroll Indicator -->
-  <div class="container">
-    <div class="scroll-indicator" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
-      <span>Scroll ke bawah</span>
-      <div class="scroll-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+    <!-- Scroll Indicator -->
+    <div class="container">
+      <div class="scroll-indicator" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
+        <span>Scroll ke bawah</span>
+        <div class="scroll-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+      </div>
     </div>
   </div>
 
@@ -800,6 +850,38 @@
       </div>
       <div class="about-card reveal">
         Psychology graduate specializing in <strong style="color:var(--navy)">Industrial and Organizational Psychology</strong> with hands-on experience supporting end-to-end recruitment processes. Skilled in candidate sourcing using Boolean search techniques, CV screening, competency-based interviewing, and recruitment data management across multiple industries. Demonstrates strong interest in Talent Acquisition strategy, employer branding, and building sustainable talent pipelines to support organizational growth.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHAT I DO (FOKUS & LAYANAN UTAMA) ──────────────── -->
+  <section id="what-i-do">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-icon"><i class="fa-solid fa-list-check"></i></div>
+        <h2>Fokus &amp; Layanan Utama (What I Do)</h2>
+      </div>
+      <div class="wid-grid">
+        <div class="wid-card reveal">
+          <div class="wid-icon"><i class="fa-solid fa-user-plus"></i></div>
+          <h3>Talent Acquisition</h3>
+          <p>End-to-end recruitment process &amp; candidate sourcing via LinkedIn, JobStreet, Glints, and internal talent pools.</p>
+        </div>
+        <div class="wid-card reveal">
+          <div class="wid-icon" style="background:rgba(184,134,11,0.08);color:var(--gold)"><i class="fa-solid fa-clipboard-user"></i></div>
+          <h3>Candidate Assessment</h3>
+          <p>Competency-based interviews &amp; psychological evaluations to assess candidate qualifications &amp; job suitability.</p>
+        </div>
+        <div class="wid-card reveal">
+          <div class="wid-icon" style="background:rgba(5,150,105,0.08);color:#059669"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Employer Branding</h3>
+          <p>Supporting employer branding initiatives, campus hiring events, job fairs, and talent acquisition programs.</p>
+        </div>
+        <div class="wid-card reveal">
+          <div class="wid-icon" style="background:rgba(124,58,237,0.08);color:#7c3aed"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Recruitment Analytics &amp; HRIS</h3>
+          <p>Managing candidate databases, HRIS tracking, SLA compliance, and interview documentation management.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -909,6 +991,38 @@
     </div>
   </section>
 
+  <!-- ─── ACHIEVEMENTS ───────────────────────────────────── -->
+  <section id="achievements">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-icon" style="background:rgba(184,134,11,0.08);color:var(--gold)"><i class="fa-solid fa-trophy"></i></div>
+        <h2>Pencapaian Utama (Key Achievements)</h2>
+      </div>
+      <div class="achieve-grid">
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">🏆</div>
+          <h3>Magna Cum Laude</h3>
+          <p>Lulusan Terbaik BINUS University dengan Predikat Kehormatan Magna Cum Laude</p>
+        </div>
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">🎓</div>
+          <h3>IPK 3.81 / 4.00</h3>
+          <p>Pencapaian Akademik Tinggi S1 Psikologi BINUS University</p>
+        </div>
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">📚</div>
+          <h3>Psikologi Industri &amp; Organisasi</h3>
+          <p>Spesialisasi Perilaku Organisasi, Seleksi SDM, &amp; Talent Management</p>
+        </div>
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">🎯</div>
+          <h3>End-to-End Recruitment</h3>
+          <p>Pengalaman Mengelola 500+ Kandidat &amp; 50+ Perusahaan Klien</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── EDUCATION ─────────────────────────────────────── -->
   <section id="education">
     <div class="container">
@@ -1007,8 +1121,10 @@
           <h3>Tools &amp; Platform</h3>
           <div class="skill-tags">
             <span class="skill-tag gray">LinkedIn Recruiter</span>
+            <span class="skill-tag gray">JobStreet &amp; Glints</span>
+            <span class="skill-tag gray">HRIS System</span>
+            <span class="skill-tag gray">Applicant Tracking Systems (ATS)</span>
             <span class="skill-tag gray">Microsoft Office</span>
-            <span class="skill-tag gray">Applicant Tracking System</span>
           </div>
         </div>
       </div>
