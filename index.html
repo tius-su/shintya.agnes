@@ -1635,6 +1635,7 @@
             <button type="button" class="cms-tab" onclick="switchCMSTab('about')">Tentang Saya</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('what-i-do')">What I Do</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('experience')">Pengalaman</button>
+            <button type="button" class="cms-tab" onclick="switchCMSTab('gallery')">Galeri Kegiatan</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('achievements')">Pencapaian</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('education')">Pendidikan &amp; Awards</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('skills')">Keahlian</button>
@@ -1803,7 +1804,14 @@
       contact_linkedin: 'shintya-agnes-setiawan',
       contact_phone: '+62 812-8006-3358',
       contact_email: 'shintya.setiawann@gmail.com',
-      footer_name: 'Shintya Agnes Setiawan, S.Psi'
+      footer_name: 'Shintya Agnes Setiawan, S.Psi',
+      gallery_photos: [
+        { src: 'Freshmen Leader/Freshmen Leader1.jpeg', title: 'Freshmen Leader – BINUS University 2023', category: 'fl', badge: 'Freshmen Leader', caption: 'Freshmen Leader 2023' },
+        { src: 'Freshmen Leader/Freshmen Leader2.jpeg', title: 'Freshmen Leader – Kegiatan Orientasi Mahasiswa Baru 2023', category: 'fl', badge: 'Freshmen Leader', caption: 'Kegiatan Orientasi 2023' },
+        { src: 'Freshmen Leader/Freshmen Leader3.jpeg', title: 'Freshmen Leader – Tim Leader & Panitia FYP 2023', category: 'fl', badge: 'Freshmen Leader', caption: 'Tim Leader FYP 2023' },
+        { src: 'Freshmen Partner/Freshmen Partner.jpeg', title: 'Freshmen Partner – Mentoring & Pendampingan Mahasiswa Baru', category: 'fp', badge: 'Freshmen Partner', caption: 'Mentoring Mahasiswa Baru' },
+        { src: 'Freshmen Partner/Freshmen Partner1.jpeg', title: 'Freshmen Partner – Sesi Bimbingan & Diskusi Akademik 2024', category: 'fp', badge: 'Freshmen Partner', caption: 'Bimbingan Akademik 2024' }
+      ]
     };
 
     let activeCMSData = {};
@@ -2003,6 +2011,7 @@
       if (!Array.isArray(activeCMSData.education)) activeCMSData.education = DEFAULT_CMS_DATA.education;
       if (!Array.isArray(activeCMSData.skills)) activeCMSData.skills = DEFAULT_CMS_DATA.skills;
       if (!Array.isArray(activeCMSData.what_i_do)) activeCMSData.what_i_do = DEFAULT_CMS_DATA.what_i_do;
+      if (!Array.isArray(activeCMSData.gallery_photos)) activeCMSData.gallery_photos = DEFAULT_CMS_DATA.gallery_photos;
 
       applyCMSDataToDOM();
     }
@@ -2104,6 +2113,23 @@
             </div>
           `;
         }).join('');
+      }
+
+      // 7. Render Gallery Grid Master
+      const galleryContainer = document.getElementById('gallery-grid-master');
+      if (galleryContainer && Array.isArray(activeCMSData.gallery_photos)) {
+        galleryContainer.innerHTML = activeCMSData.gallery_photos.map(item => `
+          <div class="gallery-item reveal visible" data-category="${item.category || 'all'}" onclick="openGalleryLightbox(this)" data-caption="${item.title || item.caption}">
+            <span class="gallery-badge" style="${item.category === 'fp' ? 'border-color:rgba(59,130,246,0.4);' : ''}"><i class="${item.category === 'fp' ? 'fa-solid fa-handshake' : 'fa-solid fa-star'}" style="color:${item.category === 'fp' ? 'var(--blue-lt)' : 'var(--gold)'}; margin-right:4px;"></i> ${item.badge || 'Kegiatan'}</span>
+            <img src="${item.src}" alt="${item.title || item.caption}" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-inner">
+                <span>${item.caption}</span>
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+          </div>
+        `).join('');
       }
     }
 
@@ -2291,6 +2317,16 @@
             { key: 'group', label: 'Nama Kategori Skill', type: 'text' },
             { key: 'color', label: 'Warna Badge (blue / gold / gray)', type: 'select', options: ['blue', 'gold', 'gray'] },
             { key: 'tags', label: 'Daftar Skill (Dipisahkan koma)', type: 'textarea' }
+          ]
+        });
+      } else if (activeTabKey === 'gallery') {
+        renderArrayEditor(container, 'gallery_photos', 'Galeri Kegiatan & Dokumentasi', {
+          fields: [
+            { key: 'src', label: 'File Path / URL Foto (Contoh: Events/Seminar.jpg atau URL online)', type: 'text' },
+            { key: 'caption', label: 'Judul / Label Foto (Tampil saat hover)', type: 'text' },
+            { key: 'title', label: 'Keterangan Detail (Tampil di Lightbox Zoom)', type: 'text' },
+            { key: 'badge', label: 'Label Badge (Contoh: Freshmen Leader, Workshop 2026)', type: 'text' },
+            { key: 'category', label: 'Kategori Filter Tab (fl = Freshmen Leader, fp = Freshmen Partner, event = Event & Workshop)', type: 'text' }
           ]
         });
       } else {
