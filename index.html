@@ -1086,26 +1086,26 @@
         <div class="section-icon"><i class="fa-solid fa-list-check"></i></div>
         <h2 data-cms="wid_title">Fokus &amp; Layanan Utama (What I Do)</h2>
       </div>
-      <div class="wid-grid">
+      <div class="wid-grid" id="wid-grid-container">
         <div class="wid-card reveal">
           <div class="wid-icon"><i class="fa-solid fa-user-plus"></i></div>
-          <h3 data-cms="wid_1_title">Talent Acquisition</h3>
-          <p data-cms="wid_1_desc">End-to-end recruitment process &amp; candidate sourcing via LinkedIn, JobStreet, Glints, and internal talent pools.</p>
+          <h3>Talent Acquisition</h3>
+          <p>End-to-end recruitment process &amp; candidate sourcing via LinkedIn, JobStreet, Glints, and internal talent pools.</p>
         </div>
         <div class="wid-card reveal">
           <div class="wid-icon" style="background:rgba(184,134,11,0.08);color:var(--gold)"><i class="fa-solid fa-clipboard-user"></i></div>
-          <h3 data-cms="wid_2_title">Candidate Assessment</h3>
-          <p data-cms="wid_2_desc">Competency-based interviews &amp; psychological evaluations to assess candidate qualifications &amp; job suitability.</p>
+          <h3>Candidate Assessment</h3>
+          <p>Competency-based interviews &amp; psychological evaluations to assess candidate qualifications &amp; job suitability.</p>
         </div>
         <div class="wid-card reveal">
           <div class="wid-icon" style="background:rgba(5,150,105,0.08);color:#059669"><i class="fa-solid fa-bullhorn"></i></div>
-          <h3 data-cms="wid_3_title">Employer Branding</h3>
-          <p data-cms="wid_3_desc">Supporting employer branding initiatives, campus hiring events, job fairs, and talent acquisition programs.</p>
+          <h3>Employer Branding</h3>
+          <p>Supporting employer branding initiatives, campus hiring events, job fairs, and talent acquisition programs.</p>
         </div>
         <div class="wid-card reveal">
           <div class="wid-icon" style="background:rgba(124,58,237,0.08);color:#7c3aed"><i class="fa-solid fa-chart-line"></i></div>
-          <h3 data-cms="wid_4_title">Recruitment Analytics &amp; HRIS</h3>
-          <p data-cms="wid_4_desc">Managing candidate databases, HRIS tracking, SLA compliance, and interview documentation management.</p>
+          <h3>Recruitment Analytics &amp; HRIS</h3>
+          <p>Managing candidate databases, HRIS tracking, SLA compliance, and interview documentation management.</p>
         </div>
       </div>
     </div>
@@ -1116,10 +1116,9 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-icon"><i class="fa-solid fa-briefcase"></i></div>
-        <h2>Pengalaman Kerja &amp; Organisasi</h2>
+        <h2 data-cms="exp_title">Pengalaman Kerja &amp; Organisasi</h2>
       </div>
-      <div class="timeline">
-
+      <div class="timeline" id="experience-timeline-container">
         <!-- PT Sentral Layanan Prima -->
         <div class="tl-item reveal">
           <div class="tl-dot current"></div>
@@ -1211,7 +1210,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1221,9 +1219,9 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-icon" style="background:rgba(184,134,11,0.08);color:var(--gold)"><i class="fa-solid fa-trophy"></i></div>
-        <h2>Pencapaian Utama (Key Achievements)</h2>
+        <h2 data-cms="ach_title">Pencapaian Utama (Key Achievements)</h2>
       </div>
-      <div class="achieve-grid">
+      <div class="achieve-grid" id="achievements-grid-container">
         <div class="achieve-card reveal">
           <div class="achieve-icon">🏆</div>
           <h3>Magna Cum Laude</h3>
@@ -1253,10 +1251,9 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <h2>Pendidikan &amp; Penghargaan</h2>
+        <h2 data-cms="edu_title">Pendidikan &amp; Penghargaan</h2>
       </div>
-      <div class="edu-grid">
-
+      <div class="edu-grid" id="education-grid-container">
         <!-- BINUS -->
         <div class="edu-card reveal">
           <div class="edu-label main">Pendidikan Utama</div>
@@ -1293,13 +1290,11 @@
         <!-- Skripsi / Research -->
         <div class="edu-card thesis-card reveal">
           <div class="edu-label sub">Judul Skripsi / Penelitian</div>
-          <div class="thesis-text">
+          <div class="thesis-text" data-cms="edu_thesis_title">
             "THE ROLE OF SELF-EFFICACY AND PERCEPTION OF GLASS CEILING IN PREDICTING TURNOVER INTENTION"
           </div>
-          <p style="margin-top:12px; font-size:0.82rem; color:var(--gray);">Undergraduate Thesis · Industrial &amp; Organizational Psychology · BINUS University 2026</p>
-
+          <p data-cms="edu_thesis_meta" style="margin-top:12px; font-size:0.82rem; color:var(--gray);">Undergraduate Thesis · Industrial &amp; Organizational Psychology · BINUS University 2026</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -1309,9 +1304,9 @@
     <div class="container">
       <div class="section-header reveal">
         <div class="section-icon"><i class="fa-solid fa-list-check"></i></div>
-        <h2>Keahlian</h2>
+        <h2 data-cms="skill_title">Keahlian</h2>
       </div>
-      <div class="skills-grid">
+      <div class="skills-grid" id="skills-grid-container">
         <div class="skill-group reveal">
           <h3>Soft Skills</h3>
           <div class="skill-tags">
@@ -1373,21 +1368,21 @@
               <div class="contact-item-icon ci-blue"><i class="fa-brands fa-linkedin-in"></i></div>
               <div class="contact-item-text">
                 <div class="label">LinkedIn</div>
-                <div class="value">shintya-agnes-setiawan</div>
+                <div class="value" data-cms="contact_linkedin">shintya-agnes-setiawan</div>
               </div>
             </a>
             <a href="https://wa.me/6281280063358" target="_blank" class="contact-item">
               <div class="contact-item-icon ci-green"><i class="fa-brands fa-whatsapp"></i></div>
               <div class="contact-item-text">
                 <div class="label">WhatsApp / No. HP</div>
-                <div class="value">+62 812-8006-3358</div>
+                <div class="value" data-cms="contact_phone">+62 812-8006-3358</div>
               </div>
             </a>
             <a href="mailto:shintya.setiawann@gmail.com" class="contact-item">
               <div class="contact-item-icon ci-gold"><i class="fa-solid fa-envelope"></i></div>
               <div class="contact-item-text">
                 <div class="label">Email</div>
-                <div class="value">shintya.setiawann@gmail.com</div>
+                <div class="value" data-cms="contact_email">shintya.setiawann@gmail.com</div>
               </div>
             </a>
           </div>
@@ -1479,6 +1474,10 @@
             <button type="button" class="cms-tab" onclick="switchCMSTab('stats')">Statistik Band</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('about')">Tentang Saya</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('what-i-do')">What I Do</button>
+            <button type="button" class="cms-tab" onclick="switchCMSTab('experience')">Pengalaman</button>
+            <button type="button" class="cms-tab" onclick="switchCMSTab('achievements')">Pencapaian</button>
+            <button type="button" class="cms-tab" onclick="switchCMSTab('education')">Pendidikan &amp; Awards</button>
+            <button type="button" class="cms-tab" onclick="switchCMSTab('skills')">Keahlian</button>
             <button type="button" class="cms-tab" onclick="switchCMSTab('contact')">Kontak &amp; Social</button>
           </div>
 
@@ -1539,17 +1538,111 @@
       stats_4_label: 'Gelar Magna Cum Laude',
       about_title: 'Tentang Saya',
       about_text: '<p style="margin-bottom:14px;">Psychology graduate specializing in <strong style="color:var(--navy)">Industrial and Organizational Psychology</strong> with hands-on experience supporting end-to-end recruitment processes.</p><p style="margin-bottom:14px;">Skilled in candidate sourcing using Boolean search techniques, CV screening, competency-based interviewing, and recruitment data management across multiple industries.</p><p>Demonstrates strong interest in <strong style="color:var(--navy)">Talent Acquisition strategy</strong>, employer branding, and building sustainable talent pipelines to support organizational growth.</p>',
+      
       wid_title: 'Fokus & Layanan Utama (What I Do)',
-      wid_1_title: 'Talent Acquisition',
-      wid_1_desc: 'End-to-end recruitment process & candidate sourcing via LinkedIn, JobStreet, Glints, and internal talent pools.',
-      wid_2_title: 'Candidate Assessment',
-      wid_2_desc: 'Competency-based interviews & psychological evaluations to assess candidate qualifications & job suitability.',
-      wid_3_title: 'Employer Branding',
-      wid_3_desc: 'Supporting employer branding initiatives, campus hiring events, job fairs, and talent acquisition programs.',
-      wid_4_title: 'Recruitment Analytics & HRIS',
-      wid_4_desc: 'Managing candidate databases, HRIS tracking, SLA compliance, and interview documentation management.',
+      what_i_do: [
+        { icon: 'fa-solid fa-user-plus', color: '', title: 'Talent Acquisition', desc: 'End-to-end recruitment process & candidate sourcing via LinkedIn, JobStreet, Glints, and internal talent pools.' },
+        { icon: 'fa-solid fa-clipboard-user', color: 'background:rgba(184,134,11,0.08);color:var(--gold)', title: 'Candidate Assessment', desc: 'Competency-based interviews & psychological evaluations to assess candidate qualifications & job suitability.' },
+        { icon: 'fa-solid fa-bullhorn', color: 'background:rgba(5,150,105,0.08);color:#059669', title: 'Employer Branding', desc: 'Supporting employer branding initiatives, campus hiring events, job fairs, and talent acquisition programs.' },
+        { icon: 'fa-solid fa-chart-line', color: 'background:rgba(124,58,237,0.08);color:#7c3aed', title: 'Recruitment Analytics & HRIS', desc: 'Managing candidate databases, HRIS tracking, SLA compliance, and interview documentation management.' }
+      ],
+
+      exp_title: 'Pengalaman Kerja & Organisasi',
+      experiences: [
+        {
+          role: 'Recruiter Specialist',
+          company: 'PT. Sentral Layanan Prima (Jakarta, Indonesia)',
+          period: '<i class="fa-regular fa-calendar" style="margin-right:5px"></i>Juni 2026 – Saat ini &nbsp;·&nbsp; Purnawaktu &nbsp;·&nbsp; Di lokasi',
+          isCurrent: true,
+          desc: '',
+          list: '<li>Manage the end-to-end recruitment process for junior to mid-level positions.</li><li>Conduct interviews for junior to mid-level candidates to assess qualifications, experience, and job suitability.</li><li>Sourced candidates via LinkedIn, JobStreet, Glints, and Talent Pools.</li><li>Manage candidate administration, including maintaining recruitment records, interview documentation, and candidate databases.</li><li>Utilize the HRIS System to manage recruitment processes, update candidate information, and track hiring progress.</li><li>Ensure all hiring processes are completed within the agreed Service Level Agreements (SLAs).</li><li>Collaborate with hiring managers to understand hiring needs and recommend suitable candidates.</li><li>Support employer branding initiatives and participate in recruitment events, such as job fairs and campus hiring programs, when required.</li>',
+          tags: 'Talent Acquisition, End-to-End Recruitment, Interviewing, HRIS System, Multi-Platform Sourcing, SLA Management, Employer Branding'
+        },
+        {
+          role: 'Recruiter',
+          company: 'PHINCON',
+          period: '<i class="fa-regular fa-calendar" style="margin-right:5px"></i>Feb 2025 – Feb 2026 &nbsp;·&nbsp; 1 thn 1 bln &nbsp;·&nbsp; Magang &nbsp;·&nbsp; Di lokasi',
+          isCurrent: false,
+          desc: 'Managed end-to-end recruitment process, including job postings, sourcing, CV screening, and competency-based interviewing for IT &amp; tech talent.',
+          list: '',
+          tags: 'Recruitment-to-Recruitment, IT Recruitment, Boolean Search'
+        },
+        {
+          role: 'Staff – Poster Competition of Psychology Championship (PSYON) 2024',
+          company: 'HIMPSIKO BINUS',
+          period: '<i class="fa-regular fa-calendar" style="margin-right:5px"></i>Jun 2024 – Feb 2025 &nbsp;·&nbsp; 9 bln &nbsp;·&nbsp; Di lokasi',
+          isCurrent: false,
+          desc: '',
+          list: '',
+          tags: 'Event Management, Time Management, Teamwork'
+        },
+        {
+          role: 'Freshmen Partner',
+          company: 'BINUS University',
+          period: '<i class="fa-regular fa-calendar" style="margin-right:5px"></i>Sep 2023 – Jun 2024 &nbsp;·&nbsp; 10 bln',
+          isCurrent: false,
+          desc: 'Actively contributed to new student success by providing guidance, mentorship, and campus orientation throughout the academic year.',
+          list: '',
+          tags: 'Mentoring, Public Speaking, Time Management'
+        },
+        {
+          role: 'Freshmen Leader',
+          company: 'BINUS University',
+          period: '<i class="fa-regular fa-calendar" style="margin-right:5px"></i>Agu 2023 – Sep 2023 &nbsp;·&nbsp; 2 bln',
+          isCurrent: false,
+          desc: 'Dedicated to providing university-related information and guidance for incoming new students during orientation.',
+          list: '',
+          tags: 'Leadership, Team Building, Time Management'
+        }
+      ],
+
+      ach_title: 'Pencapaian Utama (Key Achievements)',
+      achievements: [
+        { icon: '🏆', title: 'Magna Cum Laude', desc: 'Lulusan Terbaik BINUS University dengan Predikat Kehormatan Magna Cum Laude' },
+        { icon: '🎓', title: 'IPK 3.81 / 4.00', desc: 'Pencapaian Akademik Tinggi S1 Psikologi BINUS University' },
+        { icon: '📚', title: 'Psikologi Industri & Organisasi', desc: 'Spesialisasi Perilaku Organisasi, Seleksi SDM, &amp; Talent Management' },
+        { icon: '🎯', title: 'End-to-End Recruitment', desc: 'Pengalaman Mengelola 500+ Kandidat &amp; 50+ Perusahaan Klien' }
+      ],
+
+      edu_title: 'Pendidikan & Penghargaan',
+      education: [
+        {
+          label: 'Pendidikan Utama',
+          labelClass: 'main',
+          inst: 'BINUS University',
+          sub: '@ Kemanggisan Campus',
+          desc: '<strong style="color:var(--navy)">S1 Psikologi</strong> (2022 – 2026)<br>Faculty of Humanities · Industrial &amp; Organizational Psychology',
+          ipk: 'IPK 3.81 / 4.00',
+          badge: 'Magna Cum Laude',
+          links: '<a href="cumlaude.jpg" target="_blank" class="cert-link"><i class="fa-solid fa-file-contract"></i> Sertifikat Cum Laude</a> <span style="color:var(--border)">|</span> <a href="sertifikat.jpg" target="_blank" class="cert-link"><i class="fa-solid fa-scroll"></i> Sertifikat BINUS</a>'
+        },
+        {
+          label: 'Pendidikan Menengah',
+          labelClass: 'gray',
+          inst: 'SMA Don Bosco III – Cikarang',
+          sub: '',
+          desc: 'Institusi Pendidikan · Sekolah Menengah Atas',
+          ipk: '',
+          badge: '',
+          links: ''
+        }
+      ],
+      edu_thesis_title: '"THE ROLE OF SELF-EFFICACY AND PERCEPTION OF GLASS CEILING IN PREDICTING TURNOVER INTENTION"',
+      edu_thesis_meta: 'Undergraduate Thesis · Industrial &amp; Organizational Psychology · BINUS University 2026',
+
+      skill_title: 'Keahlian',
+      skills: [
+        { group: 'Soft Skills', color: 'blue', tags: 'Team Leadership, Time Management, Public Speaking, Teamwork, Team Building, Team Management' },
+        { group: 'HR & Recruitment', color: 'gold', tags: 'End-to-End Recruitment, Boolean Search, CV Screening, IT Recruitment, Talent Acquisition, Employer Branding' },
+        { group: 'Psychology', color: 'gray', tags: 'Industrial & Org. Psychology, Competency-Based Interview, Psychometric Assessment' },
+        { group: 'Tools & Platform', color: 'gray', tags: 'LinkedIn Recruiter, JobStreet & Glints, HRIS System, Applicant Tracking Systems (ATS), Microsoft Office' }
+      ],
+
       contact_title: 'Mari Terhubung',
       contact_desc: 'Terbuka untuk diskusi seputar Talent Acquisition, Strategi HR, maupun peluang kolaborasi profesional. Jangan ragu untuk menghubungi saya!',
+      contact_linkedin: 'shintya-agnes-setiawan',
+      contact_phone: '+62 812-8006-3358',
+      contact_email: 'shintya.setiawann@gmail.com',
       footer_name: 'Shintya Agnes Setiawan, S.Psi'
     };
 
@@ -1707,16 +1800,115 @@
         console.warn('Failed to parse CMS data:', e);
         activeCMSData = Object.assign({}, DEFAULT_CMS_DATA);
       }
+
+      // Ensure array fallbacks exist
+      if (!Array.isArray(activeCMSData.experiences)) activeCMSData.experiences = DEFAULT_CMS_DATA.experiences;
+      if (!Array.isArray(activeCMSData.achievements)) activeCMSData.achievements = DEFAULT_CMS_DATA.achievements;
+      if (!Array.isArray(activeCMSData.education)) activeCMSData.education = DEFAULT_CMS_DATA.education;
+      if (!Array.isArray(activeCMSData.skills)) activeCMSData.skills = DEFAULT_CMS_DATA.skills;
+      if (!Array.isArray(activeCMSData.what_i_do)) activeCMSData.what_i_do = DEFAULT_CMS_DATA.what_i_do;
+
       applyCMSDataToDOM();
     }
 
     function applyCMSDataToDOM() {
+      // 1. Render scalar data-cms elements
       document.querySelectorAll('[data-cms]').forEach(el => {
         const key = el.getAttribute('data-cms');
         if (activeCMSData[key] !== undefined) {
           el.innerHTML = activeCMSData[key];
         }
       });
+
+      // 2. Render What I Do
+      const widContainer = document.getElementById('wid-grid-container');
+      if (widContainer && Array.isArray(activeCMSData.what_i_do)) {
+        widContainer.innerHTML = activeCMSData.what_i_do.map(item => `
+          <div class="wid-card reveal visible">
+            <div class="wid-icon" style="${item.color || ''}"><i class="${item.icon || 'fa-solid fa-star'}"></i></div>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+        `).join('');
+      }
+
+      // 3. Render Experience Timeline
+      const expContainer = document.getElementById('experience-timeline-container');
+      if (expContainer && Array.isArray(activeCMSData.experiences)) {
+        expContainer.innerHTML = activeCMSData.experiences.map(item => {
+          const tagSpans = (item.tags || '').split(',').map(t => t.trim()).filter(Boolean).map(t => `<span class="tag">${t}</span>`).join('\n');
+          return `
+            <div class="tl-item reveal visible">
+              <div class="tl-dot ${item.isCurrent ? 'current' : ''}"></div>
+              <div class="tl-card">
+                <div class="tl-role">${item.role}</div>
+                <div class="tl-company">${item.company}</div>
+                <div class="tl-period">${item.period}</div>
+                ${item.list ? `<ul class="tl-list">${item.list}</ul>` : ''}
+                ${item.desc ? `<div class="tl-desc">${item.desc}</div>` : ''}
+                ${tagSpans ? `<div class="tl-tags">${tagSpans}</div>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 4. Render Achievements Grid
+      const achContainer = document.getElementById('achievements-grid-container');
+      if (achContainer && Array.isArray(activeCMSData.achievements)) {
+        achContainer.innerHTML = activeCMSData.achievements.map(item => `
+          <div class="achieve-card reveal visible">
+            <div class="achieve-icon">${item.icon || '🏆'}</div>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+        `).join('');
+      }
+
+      // 5. Render Education Grid
+      const eduContainer = document.getElementById('education-grid-container');
+      if (eduContainer && Array.isArray(activeCMSData.education)) {
+        let html = activeCMSData.education.map(item => `
+          <div class="edu-card reveal visible">
+            <div class="edu-label ${item.labelClass || 'main'}">${item.label || 'Pendidikan'}</div>
+            <h3>${item.inst}</h3>
+            ${item.sub ? `<p>${item.sub}</p>` : ''}
+            ${item.desc ? `<p style="margin-top:6px; color:#475569; font-size:0.88rem;">${item.desc}</p>` : ''}
+            ${item.ipk ? `<div class="edu-ipk"><i class="fa-solid fa-star" style="font-size:0.75rem"></i> ${item.ipk}</div>` : ''}
+            ${item.badge ? `<div style="margin-top:10px;"><div class="cumlaude-badge"><i class="fa-solid fa-award"></i> ${item.badge}</div></div>` : ''}
+            ${item.links ? `<div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:8px;">${item.links}</div>` : ''}
+          </div>
+        `).join('');
+
+        // Append Skripsi Card
+        html += `
+          <div class="edu-card thesis-card reveal visible">
+            <div class="edu-label sub">Judul Skripsi / Penelitian</div>
+            <div class="thesis-text" data-cms="edu_thesis_title">${activeCMSData.edu_thesis_title || ''}</div>
+            <p data-cms="edu_thesis_meta" style="margin-top:12px; font-size:0.82rem; color:var(--gray);">${activeCMSData.edu_thesis_meta || ''}</p>
+          </div>
+        `;
+        eduContainer.innerHTML = html;
+      }
+
+      // 6. Render Skills Grid
+      const skillContainer = document.getElementById('skills-grid-container');
+      if (skillContainer && Array.isArray(activeCMSData.skills)) {
+        skillContainer.innerHTML = activeCMSData.skills.map(item => {
+          const tagList = Array.isArray(item.tags) 
+            ? item.tags 
+            : (item.tags || '').split(',').map(t => t.trim()).filter(Boolean);
+          const tagHtml = tagList.map(t => `<span class="skill-tag ${item.color || 'gray'}">${t}</span>`).join('\n');
+          return `
+            <div class="skill-group reveal visible">
+              <h3>${item.group}</h3>
+              <div class="skill-tags">
+                ${tagHtml}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
     }
 
     const cmsModal = document.getElementById('cms-modal');
@@ -1815,26 +2007,19 @@
         { key: 'about_title', label: 'Judul Section Tentang', type: 'text' },
         { key: 'about_text', label: 'Deskripsi Lengkap Profil & Spesialisasi', type: 'textarea' }
       ],
-      'what-i-do': [
-        { key: 'wid_title', label: 'Judul Section What I Do', type: 'text' },
-        { key: 'wid_1_title', label: 'Layanan 1 - Judul', type: 'text' },
-        { key: 'wid_1_desc', label: 'Layanan 1 - Deskripsi', type: 'textarea' },
-        { key: 'wid_2_title', label: 'Layanan 2 - Judul', type: 'text' },
-        { key: 'wid_2_desc', label: 'Layanan 2 - Deskripsi', type: 'textarea' },
-        { key: 'wid_3_title', label: 'Layanan 3 - Judul', type: 'text' },
-        { key: 'wid_3_desc', label: 'Layanan 3 - Deskripsi', type: 'textarea' },
-        { key: 'wid_4_title', label: 'Layanan 4 - Judul', type: 'text' },
-        { key: 'wid_4_desc', label: 'Layanan 4 - Deskripsi', type: 'textarea' }
-      ],
       contact: [
         { key: 'contact_title', label: 'Judul Section Kontak', type: 'text' },
-        { key: 'contact_desc', label: 'Deskripsi Ajak Kontak', type: 'textarea' }
+        { key: 'contact_desc', label: 'Deskripsi Ajak Kontak', type: 'textarea' },
+        { key: 'contact_linkedin', label: 'Detail Username LinkedIn', type: 'text' },
+        { key: 'contact_phone', label: 'Detail Nomor WhatsApp / Telp', type: 'text' },
+        { key: 'contact_email', label: 'Detail Alamat Email', type: 'text' }
       ]
     };
 
     let activeTabKey = 'general';
 
     function switchCMSTab(tabKey) {
+      saveCurrentFormValuesToData();
       activeTabKey = tabKey;
       document.querySelectorAll('#cms-tabs-container .cms-tab').forEach(btn => {
         btn.classList.remove('active');
@@ -1847,28 +2032,228 @@
 
     function renderCMSForm() {
       const container = document.getElementById('cms-tab-content-container');
-      const fields = CMS_TABS_CONFIG[activeTabKey] || [];
+      if (!container) return;
+      container.innerHTML = '';
 
-      let html = '<div class="cms-form-grid">';
-      fields.forEach(f => {
-        const val = activeCMSData[f.key] !== undefined ? activeCMSData[f.key] : '';
-        const isFull = f.type === 'textarea';
+      if (activeTabKey === 'experience') {
+        renderArrayEditor(container, 'experiences', 'Pengalaman Kerja / Organisasi', {
+          titleKey: 'exp_title',
+          titleLabel: 'Judul Section Pengalaman',
+          fields: [
+            { key: 'role', label: 'Jabatan / Role', type: 'text' },
+            { key: 'company', label: 'Nama Perusahaan / Organisasi', type: 'text' },
+            { key: 'period', label: 'Periode & Status (HTML allowed)', type: 'text' },
+            { key: 'isCurrent', label: 'Status Posisi Saat Ini (Tampilkan Dot Emas)', type: 'checkbox' },
+            { key: 'desc', label: 'Deskripsi Singkat', type: 'textarea' },
+            { key: 'list', label: 'Tanggung Jawab (Gunakan format <li>...</li>)', type: 'textarea' },
+            { key: 'tags', label: 'Skill / Tag (Dipisahkan koma)', type: 'text' }
+          ]
+        });
+      } else if (activeTabKey === 'achievements') {
+        renderArrayEditor(container, 'achievements', 'Pencapaian Utama', {
+          titleKey: 'ach_title',
+          titleLabel: 'Judul Section Pencapaian',
+          fields: [
+            { key: 'icon', label: 'Emoji / Icon (Contoh: 🏆, 🎓, 📚, 🎯)', type: 'text' },
+            { key: 'title', label: 'Judul Pencapaian', type: 'text' },
+            { key: 'desc', label: 'Keterangan Pencapaian', type: 'textarea' }
+          ]
+        });
+      } else if (activeTabKey === 'what-i-do') {
+        renderArrayEditor(container, 'what_i_do', 'Fokus & Layanan Utama', {
+          titleKey: 'wid_title',
+          titleLabel: 'Judul Section What I Do',
+          fields: [
+            { key: 'icon', label: 'Class Icon FontAwesome (Contoh: fa-solid fa-user-plus)', type: 'text' },
+            { key: 'title', label: 'Judul Layanan / Fokus', type: 'text' },
+            { key: 'desc', label: 'Deskripsi Layanan', type: 'textarea' }
+          ]
+        });
+      } else if (activeTabKey === 'education') {
+        renderArrayEditor(container, 'education', 'Riwayat Pendidikan', {
+          titleKey: 'edu_title',
+          titleLabel: 'Judul Section Pendidikan',
+          extraFields: [
+            { key: 'edu_thesis_title', label: 'Judul Skripsi / Research Thesis', type: 'textarea' },
+            { key: 'edu_thesis_meta', label: 'Sub Meta Skripsi & Tahun', type: 'text' }
+          ],
+          fields: [
+            { key: 'label', label: 'Label (Contoh: Pendidikan Utama, Sertifikasi)', type: 'text' },
+            { key: 'inst', label: 'Nama Institusi / Universitas / Sekolah', type: 'text' },
+            { key: 'sub', label: 'Sub / Nama Kampus', type: 'text' },
+            { key: 'desc', label: 'Jurusan & Detail (HTML allowed)', type: 'textarea' },
+            { key: 'ipk', label: 'IPK / Nilai (opsional)', type: 'text' },
+            { key: 'badge', label: 'Badge Predikat (opsional)', type: 'text' },
+            { key: 'links', label: 'Link Sertifikat / Dokumen (HTML <a> allowed)', type: 'textarea' }
+          ]
+        });
+      } else if (activeTabKey === 'skills') {
+        renderArrayEditor(container, 'skills', 'Kategori & Tag Keahlian', {
+          titleKey: 'skill_title',
+          titleLabel: 'Judul Section Keahlian',
+          fields: [
+            { key: 'group', label: 'Nama Kategori Skill', type: 'text' },
+            { key: 'color', label: 'Warna Badge (blue / gold / gray)', type: 'select', options: ['blue', 'gold', 'gray'] },
+            { key: 'tags', label: 'Daftar Skill (Dipisahkan koma)', type: 'textarea' }
+          ]
+        });
+      } else {
+        const fields = CMS_TABS_CONFIG[activeTabKey] || [];
+        let html = '<div class="cms-form-grid">';
+        fields.forEach(f => {
+          const val = activeCMSData[f.key] !== undefined ? activeCMSData[f.key] : '';
+          const isFull = f.type === 'textarea';
+          html += `
+            <div class="cms-field ${isFull ? 'cms-form-full' : ''}">
+              <label for="input_${f.key}">${f.label}</label>
+              ${f.type === 'textarea' 
+                ? `<textarea id="input_${f.key}" class="cms-textarea" rows="3">${val}</textarea>`
+                : `<input type="text" id="input_${f.key}" class="cms-input" value="${val.replace(/"/g, '&quot;')}">`
+              }
+            </div>
+          `;
+        });
+        html += '</div>';
+        container.innerHTML = html;
+      }
+    }
+
+    function renderArrayEditor(container, arrayKey, sectionTitle, config) {
+      let html = '';
+
+      if (config.titleKey) {
+        const titleVal = activeCMSData[config.titleKey] || '';
         html += `
-          <div class="cms-field ${isFull ? 'cms-form-full' : ''}">
-            <label for="input_${f.key}">${f.label}</label>
-            ${f.type === 'textarea' 
-              ? `<textarea id="input_${f.key}" class="cms-textarea" rows="3">${val}</textarea>`
-              : `<input type="text" id="input_${f.key}" class="cms-input" value="${val.replace(/"/g, '&quot;')}">`
-            }
+          <div class="cms-field cms-form-full" style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px dashed var(--border);">
+            <label for="input_${config.titleKey}">${config.titleLabel}</label>
+            <input type="text" id="input_${config.titleKey}" class="cms-input" value="${titleVal.replace(/"/g, '&quot;')}">
           </div>
         `;
-      });
-      html += '</div>';
+      }
+
+      html += `
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <h4 style="font-size:1rem; font-weight:800; color:var(--navy);">Daftar ${sectionTitle} (${(activeCMSData[arrayKey] || []).length} Item)</h4>
+          <button type="button" onclick="addCMSArrayItem('${arrayKey}')" class="btn-primary" style="padding:8px 16px; font-size:0.8rem;">
+            <i class="fa-solid fa-plus-circle"></i> + Tambah ${sectionTitle} Baru
+          </button>
+        </div>
+      `;
+
+      const items = activeCMSData[arrayKey] || [];
+      if (items.length === 0) {
+        html += `<div style="text-align:center; padding:30px; background:#fff; border:1px dashed var(--border); border-radius:12px; color:var(--gray);">Belum ada item ${sectionTitle}. Klik tombol di atas untuk menambah item baru.</div>`;
+      } else {
+        items.forEach((item, idx) => {
+          html += `
+            <div class="cms-item-card" style="background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px; margin-bottom:16px; position:relative; box-shadow:0 4px 12px rgba(0,0,0,0.03);">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--border);">
+                <span style="font-weight:800; font-size:0.88rem; color:var(--blue);"><i class="fa-solid fa-list-ol"></i> #${idx + 1} ${item.role || item.title || item.inst || item.group || 'Item'}</span>
+                <button type="button" onclick="deleteCMSArrayItem('${arrayKey}', ${idx})" class="btn-ghost" style="padding:4px 10px; font-size:0.75rem; color:#dc2626; border-color:#fca5a5;" title="Hapus item ini">
+                  <i class="fa-solid fa-trash"></i> Hapus Item
+                </button>
+              </div>
+              <div class="cms-form-grid">
+          `;
+
+          config.fields.forEach(f => {
+            const val = item[f.key] !== undefined ? item[f.key] : '';
+            const isFull = f.type === 'textarea';
+            const fieldId = `arr_${arrayKey}_${idx}_${f.key}`;
+
+            html += `<div class="cms-field ${isFull ? 'cms-form-full' : ''}">`;
+            html += `<label for="${fieldId}">${f.label}</label>`;
+
+            if (f.type === 'checkbox') {
+              html += `<div style="display:flex; align-items:center; gap:8px; margin-top:6px;"><input type="checkbox" id="${fieldId}" ${val ? 'checked' : ''} style="width:18px; height:18px; cursor:pointer;"> <span style="font-size:0.82rem; color:var(--navy);">Centang jika Ya / Aktif</span></div>`;
+            } else if (f.type === 'textarea') {
+              html += `<textarea id="${fieldId}" class="cms-textarea" rows="3">${val}</textarea>`;
+            } else if (f.type === 'select') {
+              html += `<select id="${fieldId}" class="cms-input">`;
+              (f.options || []).forEach(opt => {
+                html += `<option value="${opt}" ${val === opt ? 'selected' : ''}>${opt}</option>`;
+              });
+              html += `</select>`;
+            } else {
+              html += `<input type="text" id="${fieldId}" class="cms-input" value="${String(val).replace(/"/g, '&quot;')}">`;
+            }
+
+            html += `</div>`;
+          });
+
+          html += `
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      if (config.extraFields) {
+        html += '<div class="cms-form-grid" style="margin-top:20px; padding-top:16px; border-top:2px dashed var(--border);">';
+        config.extraFields.forEach(f => {
+          const val = activeCMSData[f.key] !== undefined ? activeCMSData[f.key] : '';
+          const isFull = f.type === 'textarea';
+          html += `
+            <div class="cms-field ${isFull ? 'cms-form-full' : ''}">
+              <label for="input_${f.key}">${f.label}</label>
+              ${f.type === 'textarea' 
+                ? `<textarea id="input_${f.key}" class="cms-textarea" rows="3">${val}</textarea>`
+                : `<input type="text" id="input_${f.key}" class="cms-input" value="${val.replace(/"/g, '&quot;')}">`
+              }
+            </div>
+          `;
+        });
+        html += '</div>';
+      }
+
+      html += `
+        <div style="text-align:center; margin-top:20px; margin-bottom:10px;">
+          <button type="button" onclick="addCMSArrayItem('${arrayKey}')" class="btn-primary" style="padding:10px 24px; font-size:0.85rem; border-radius:12px;">
+            <i class="fa-solid fa-plus-circle"></i> + Tambah ${sectionTitle} Baru
+          </button>
+        </div>
+      `;
+
       container.innerHTML = html;
     }
 
-    function saveCMSData() {
-      // Collect current tab values into activeCMSData
+    function addCMSArrayItem(arrayKey) {
+      saveCurrentFormValuesToData();
+      if (!Array.isArray(activeCMSData[arrayKey])) {
+        activeCMSData[arrayKey] = [];
+      }
+      
+      const defaults = {
+        experiences: { role: 'Posisi / Jabatan Baru', company: 'Nama Perusahaan', period: '2026 – Saat ini', isCurrent: false, desc: '', list: '<li>Tanggung jawab utama...</li>', tags: 'Talent Acquisition, Recruitment' },
+        achievements: { icon: '🏆', title: 'Pencapaian Baru', desc: 'Penjelasan singkat mengenai pencapaian ini' },
+        what_i_do: { icon: 'fa-solid fa-star', color: '', title: 'Layanan Baru', desc: 'Deskripsi singkat layanan baru' },
+        education: { label: 'Pendidikan', labelClass: 'main', inst: 'Nama Universitas / Sekolah', sub: '', desc: 'Detail Jurusan & Tahun', ipk: '', badge: '', links: '' },
+        skills: { group: 'Kategori Skill Baru', color: 'blue', tags: 'Skill A, Skill B, Skill C' }
+      };
+
+      const newItem = Object.assign({}, defaults[arrayKey] || {});
+      activeCMSData[arrayKey].push(newItem);
+      renderCMSForm();
+    }
+
+    function deleteCMSArrayItem(arrayKey, index) {
+      saveCurrentFormValuesToData();
+      if (confirm('Apakah Anda yakin ingin menghapus item ini?')) {
+        if (Array.isArray(activeCMSData[arrayKey])) {
+          activeCMSData[arrayKey].splice(index, 1);
+          renderCMSForm();
+        }
+      }
+    }
+
+    function saveCurrentFormValuesToData() {
+      // 1. Save title / scalar keys if present on current tab form
+      document.querySelectorAll('#cms-tab-content-container input[id^="input_"], #cms-tab-content-container textarea[id^="input_"]').forEach(el => {
+        const key = el.id.replace('input_', '');
+        activeCMSData[key] = el.value;
+      });
+
+      // 2. Save scalar fields for scalar tabs
       const fields = CMS_TABS_CONFIG[activeTabKey] || [];
       fields.forEach(f => {
         const input = document.getElementById(`input_${f.key}`);
@@ -1877,14 +2262,44 @@
         }
       });
 
+      // 3. Save array fields for array tabs
+      const arrayKeyMap = {
+        experience: 'experiences',
+        achievements: 'achievements',
+        'what-i-do': 'what_i_do',
+        education: 'education',
+        skills: 'skills'
+      };
+
+      const currentArrayKey = arrayKeyMap[activeTabKey];
+      if (currentArrayKey && Array.isArray(activeCMSData[currentArrayKey])) {
+        activeCMSData[currentArrayKey].forEach((item, idx) => {
+          Object.keys(item).forEach(prop => {
+            const input = document.getElementById(`arr_${currentArrayKey}_${idx}_${prop}`);
+            if (input) {
+              if (input.type === 'checkbox') {
+                item[prop] = input.checked;
+              } else {
+                item[prop] = input.value;
+              }
+            }
+          });
+        });
+      }
+    }
+
+    function saveCMSData() {
+      saveCurrentFormValuesToData();
       localStorage.setItem('tia_cms_data', JSON.stringify(activeCMSData));
       applyCMSDataToDOM();
 
       const statusEl = document.getElementById('cms-save-status');
-      statusEl.style.display = 'inline-block';
-      setTimeout(() => {
-        statusEl.style.display = 'none';
-      }, 2500);
+      if (statusEl) {
+        statusEl.style.display = 'inline-block';
+        setTimeout(() => {
+          statusEl.style.display = 'none';
+        }, 2500);
+      }
     }
 
     function resetCMSToDefault() {
