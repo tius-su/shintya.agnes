@@ -1,7 +1,8 @@
-const CACHE_NAME = 'shintya-portfolio-v1';
+const CACHE_NAME = 'shintya-portfolio-v2';
 const ASSETS = [
   './',
   './index.html',
+  './admin.html',
   './manifest.json',
   './tia.jpg',
   './icon-192.png',

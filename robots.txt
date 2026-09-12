@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tia-web-flax.vercel.app/sitemap.xml
+Sitemap: https://shintya-web-flax.vercel.app/sitemap.xml
