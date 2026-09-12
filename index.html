@@ -238,18 +238,18 @@
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      max-width: 1000px; margin: 0 auto; padding: 16px 24px;
+      max-width: 1140px; margin: 0 auto; padding: 16px 24px; gap: 16px;
     }
     .nav-logo {
-      font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em;
+      font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em;
       background: linear-gradient(135deg, var(--navy) 30%, var(--blue));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      text-decoration: none;
+      text-decoration: none; white-space: nowrap !important; flex-shrink: 0; display: inline-block;
     }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 22px; list-style: none; flex-shrink: 0; }
     .nav-links a {
-      color: var(--gray); font-size: 0.85rem; font-weight: 500; text-decoration: none;
-      position: relative; padding-bottom: 2px; transition: color 0.3s;
+      color: var(--gray); font-size: 0.84rem; font-weight: 500; text-decoration: none;
+      position: relative; padding-bottom: 2px; transition: color 0.3s; white-space: nowrap !important;
     }
     .nav-links a::after {
       content: ''; position: absolute; left: 0; bottom: -2px;
@@ -772,6 +772,84 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
+    /* ─── GALLERY ─────────────────────────────────────────────── */
+    #gallery { background: var(--bg2); }
+    .gallery-filter-bar {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .gallery-filter-btn {
+      background: #fff; border: 1.5px solid var(--border);
+      color: var(--navy); font-size: 0.83rem; font-weight: 600;
+      padding: 8px 18px; border-radius: 50px; cursor: pointer;
+      transition: all 0.25s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .gallery-filter-btn:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
+    .gallery-filter-btn.active {
+      background: var(--navy); border-color: var(--navy); color: #fff;
+      box-shadow: 0 4px 16px rgba(30,41,59,0.25);
+    }
+    .gallery-groups { display: flex; flex-direction: column; gap: 48px; }
+    .gallery-group-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy3) 100%);
+      color: #fff; padding: 8px 20px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+      margin-bottom: 18px; box-shadow: 0 4px 14px rgba(30,41,59,0.2);
+    }
+    .gallery-group-label .gl-period {
+      opacity: 0.65; font-weight: 500; font-size: 0.78rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative; border-radius: 16px; overflow: hidden;
+      cursor: pointer; aspect-ratio: 4/3;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
+                  box-shadow 0.35s ease;
+      background: #0f172a;
+    }
+    .gallery-item:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 16px 45px rgba(0,0,0,0.25); }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+      display: block;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-badge {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px);
+      color: #fff; font-size: 0.72rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2);
+    }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.2) 50%, transparent 100%);
+      opacity: 0; transition: opacity 0.3s ease;
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 16px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      color: #fff; font-size: 0.83rem; font-weight: 600;
+    }
+    .gallery-overlay-inner i { font-size: 1rem; color: var(--gold-lt); }
+    /* featured item — spans 2 cols on wider grid */
+    .gallery-item.featured {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+    @media (max-width: 600px) {
+      .gallery-item.featured { grid-column: span 1; aspect-ratio: 4/3; }
+      .gallery-grid { grid-template-columns: repeat(1, 1fr); gap: 14px; }
+      .gallery-filter-bar { gap: 6px; }
+      .gallery-filter-btn { font-size: 0.78rem; padding: 6px 14px; }
+    }
+
     /* ─── MINI CMS / ADMIN MODAL ──────────────────────────────── */
     .cms-trigger-btn {
       display: inline-flex; align-items: center; gap: 6px;
@@ -887,6 +965,12 @@
     .cms-alert-error { background: #fee2e2; color: #b91c1c; display: inline-block; }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 1100px) and (min-width: 769px) {
+      .nav-inner { padding: 14px 18px; gap: 12px; }
+      .nav-logo { font-size: 0.92rem; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 0.78rem; }
+    }
     @media (max-width: 992px) {
       .wid-grid, .achieve-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
@@ -963,6 +1047,7 @@
         <li><a href="#about">Tentang</a></li>
         <li><a href="#what-i-do">What I Do</a></li>
         <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#gallery">Galeri</a></li>
         <li><a href="#achievements">Pencapaian</a></li>
         <li><a href="#education">Pendidikan</a></li>
         <li><a href="#skills">Keahlian</a></li>
@@ -976,6 +1061,7 @@
       <a href="#about">Tentang</a>
       <a href="#what-i-do">What I Do</a>
       <a href="#experience">Pengalaman</a>
+      <a href="#gallery">Galeri</a>
       <a href="#achievements">Pencapaian</a>
       <a href="#education">Pendidikan</a>
       <a href="#skills">Keahlian</a>
@@ -1214,6 +1300,97 @@
     </div>
   </section>
 
+  <!-- ─── GALLERY ──────────────────────────────────────────── -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-icon"><i class="fa-solid fa-images"></i></div>
+        <h2>Galeri Kegiatan &amp; Dokumentasi</h2>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="gallery-filter-bar reveal">
+        <button type="button" class="gallery-filter-btn active" onclick="filterGallery('all', this)"><i class="fa-solid fa-grid-2"></i> Semua Kegiatan (5)</button>
+        <button type="button" class="gallery-filter-btn" onclick="filterGallery('fl', this)"><i class="fa-solid fa-star" style="color:var(--gold)"></i> Freshmen Leader (3)</button>
+        <button type="button" class="gallery-filter-btn" onclick="filterGallery('fp', this)"><i class="fa-solid fa-handshake" style="color:var(--blue)"></i> Freshmen Partner (2)</button>
+      </div>
+
+      <div class="gallery-groups">
+
+        <!-- Group 1: Freshmen Leader -->
+        <div class="reveal gallery-group-block" data-category="fl">
+          <div class="gallery-group-label">
+            <i class="fa-solid fa-star"></i>
+            Freshmen Leader &nbsp;<span class="gl-period">Agu – Sep 2023 &nbsp;·&nbsp; BINUS University</span>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item featured" onclick="openGalleryLightbox(this)" data-caption="Freshmen Leader – BINUS University 2023">
+              <span class="gallery-badge"><i class="fa-solid fa-star" style="color:var(--gold)"></i> Freshmen Leader</span>
+              <img src="Freshmen Leader/Freshmen Leader1.jpeg" alt="Freshmen Leader BINUS University" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-inner">
+                  <span>Freshmen Leader 2023</span>
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryLightbox(this)" data-caption="Freshmen Leader – Kegiatan Orientasi Mahasiswa Baru 2023">
+              <span class="gallery-badge"><i class="fa-solid fa-star" style="color:var(--gold)"></i> Freshmen Leader</span>
+              <img src="Freshmen Leader/Freshmen Leader2.jpeg" alt="Freshmen Leader Kegiatan Orientasi" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-inner">
+                  <span>Kegiatan Orientasi 2023</span>
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryLightbox(this)" data-caption="Freshmen Leader – Tim Leader &amp; Panitia FYP 2023">
+              <span class="gallery-badge"><i class="fa-solid fa-star" style="color:var(--gold)"></i> Freshmen Leader</span>
+              <img src="Freshmen Leader/Freshmen Leader3.jpeg" alt="Freshmen Leader Tim Orientasi" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-inner">
+                  <span>Tim Leader FYP 2023</span>
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2: Freshmen Partner -->
+        <div class="reveal gallery-group-block" data-category="fp">
+          <div class="gallery-group-label">
+            <i class="fa-solid fa-handshake"></i>
+            Freshmen Partner &nbsp;<span class="gl-period">Sep 2023 – Jun 2024 &nbsp;·&nbsp; BINUS University</span>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item featured" onclick="openGalleryLightbox(this)" data-caption="Freshmen Partner – Mentoring &amp; Pendampingan Mahasiswa Baru">
+              <span class="gallery-badge" style="border-color:rgba(59,130,246,0.4)"><i class="fa-solid fa-handshake" style="color:var(--blue-lt)"></i> Freshmen Partner</span>
+              <img src="Freshmen Partner/Freshmen Partner.jpeg" alt="Freshmen Partner Mentoring Mahasiswa Baru" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-inner">
+                  <span>Mentoring &amp; Pendampingan</span>
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryLightbox(this)" data-caption="Freshmen Partner – Sesi Bimbingan &amp; Diskusi Akademik 2024">
+              <span class="gallery-badge" style="border-color:rgba(59,130,246,0.4)"><i class="fa-solid fa-handshake" style="color:var(--blue-lt)"></i> Freshmen Partner</span>
+              <img src="Freshmen Partner/Freshmen Partner1.jpeg" alt="Freshmen Partner Bimbingan Akademik" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-inner">
+                  <span>Bimbingan Akademik 2024</span>
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── ACHIEVEMENTS ───────────────────────────────────── -->
   <section id="achievements">
     <div class="container">
@@ -1415,7 +1592,7 @@
     <div class="lightbox-overlay" id="lightbox-backdrop"></div>
     <div class="lightbox-container">
       <div class="lightbox-toolbar">
-        <span class="lightbox-caption"><i class="fa-solid fa-image" style="margin-right:6px;"></i> Foto Profil – Shintya Agnes Setiawan, S.Psi</span>
+        <span class="lightbox-caption" id="lb-caption"><i class="fa-solid fa-image" style="margin-right:6px;"></i> Foto Profil – Shintya Agnes Setiawan, S.Psi</span>
         <div class="lightbox-controls">
           <button id="lb-zoom-out" title="Zoom Out (-)"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
           <button id="lb-zoom-reset" title="Reset Zoom">100%</button>
@@ -1765,6 +1942,8 @@
       lightboxModal.setAttribute('aria-hidden', 'false');
       const mainImg = document.getElementById('hero-img-display');
       if (mainImg) lightboxImg.src = mainImg.src;
+      const lbCapEl = document.getElementById('lb-caption');
+      if (lbCapEl) lbCapEl.innerHTML = '<i class="fa-solid fa-image" style="margin-right:6px;"></i> Foto Profil \u2013 Shintya Agnes Setiawan, S.Psi';
       setLightboxZoom(1.0);
     }
 
@@ -1785,6 +1964,40 @@
         setLightboxZoom(currentZoomScale > 1.2 ? 1.0 : 2.0);
       });
     }
+
+    // ── GALLERY LIGHTBOX & FILTER HELPER
+    function filterGallery(category, btnEl) {
+      document.querySelectorAll('.gallery-filter-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+
+      document.querySelectorAll('.gallery-group-block').forEach(group => {
+        if (category === 'all' || group.getAttribute('data-category') === category) {
+          group.style.display = 'block';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+    }
+
+    function openGalleryLightbox(el) {
+      const img = el.querySelector('img');
+      const caption = el.getAttribute('data-caption') || 'Galeri Kegiatan';
+      if (!img || !lightboxModal) return;
+      lightboxImg.src = img.src;
+      const lbCapEl = document.getElementById('lb-caption');
+      if (lbCapEl) lbCapEl.innerHTML = '<i class="fa-solid fa-images" style="margin-right:6px;"></i> ' + caption;
+      lightboxModal.classList.add('open');
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      setLightboxZoom(1.0);
+    }
+
+    // Keyboard support (Esc to close, etc.)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeCMSModal();
+      }
+    });
 
     // ── MINI CMS / ADMIN SYSTEM ENGINE
 
